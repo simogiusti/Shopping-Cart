@@ -2,7 +2,7 @@
 
 ## Introduzione
 
-Il presente documento descrive in modo approfondito il progetto denominato "Shopping Cart", sviluppato nell'ambito del percorso scolastico per l'Esame di Stato. Il progetto ha lo scopo di realizzare un'applicazione web completa per la gestione di un carrello elettronico, simulando le funzionalità di un piccolo e-commerce. Il lavoro integra competenze acquisite nei linguaggi di programmazione, nello sviluppo front-end e back-end, nell'interazione con database NoSQL (MongoDB) e nell'utilizzo di framework moderni come Angular e Node.js.
+Il presente documento descrive in modo approfondito il progetto "Shopping Cart", sviluppato durante il percorso scolastico. Il progetto ha lo scopo di realizzare un'applicazione web completa per la gestione di un carrello, simulando le funzionalità di un piccolo e-commerce. Il lavoro integra competenze acquisite nei linguaggi di programmazione, nello sviluppo front-end e back-end, nell'interazione con database NoSQL (MongoDB) e nell'utilizzo di framework moderni come Angular e Node.js.
 
 ## Obiettivi del progetto
 
@@ -13,7 +13,7 @@ Il presente documento descrive in modo approfondito il progetto denominato "Shop
 
 ## Tecnologie utilizzate
 
-* **Angular (versione 17)**: utilizzato per la parte front-end. Grazie ai suoi componenti modulari e al data-binding, ha permesso la creazione di un'interfaccia utente dinamica e reattiva.
+* **Angular**: utilizzato per la parte front-end. Grazie ai suoi componenti modulari e al data-binding, ha permesso la creazione di un'interfaccia utente dinamica e reattiva.
 * **Node.js e Express.js**: utilizzati per creare il server back-end. Express ha facilitato la gestione delle rotte HTTP e delle richieste asincrone.
 * **MongoDB**: database NoSQL utilizzato per salvare i dati dei prodotti e del carrello.
 * **Mongoose**: libreria ODM per facilitare l'interazione con MongoDB e definire modelli di dati.
@@ -44,8 +44,8 @@ Il presente documento descrive in modo approfondito il progetto denominato "Shop
 ## Funzionalità implementate
 
 * Visualizzazione dinamica dei prodotti.
-* Aggiunta di un prodotto al carrello tramite il pulsante "Aggiungi al carrello".
-* Rimozione di un prodotto direttamente dalla pagina "Carrello".
+* Aggiunta di un prodotto al carrello tramite il pulsante "Aggiungi al carrello" dalla pagina "Prodotti".
+* Rimozione di un prodotto dal carrello tramite il pulsante "Rimuovi dal carrello" dalla pagina "Carrello".
 * Aggiornamento istantaneo del numero di articoli nel carrello.
 * Persistenza dei dati tra refresh e riavvio dell'applicazione, grazie al salvataggio in MongoDB.
 
@@ -68,7 +68,7 @@ Contiene tutti i prodotti disponibili all'acquisto. Ogni documento ha la seguent
 
 ### 2. carrello
 
-Contiene i prodotti attualmente aggiunti al carrello. Ogni documento è simile a quelli della collezione prodotti ma salvato separatamente, per consentire operazioni indipendenti.
+Contiene i prodotti aggiunti al carrello. Ogni documento è simile a quelli della collezione prodotti ma salvato separatamente, per consentire operazioni indipendenti.
 
 ## Query utilizzate per l'interazione con MongoDB
 
@@ -83,12 +83,7 @@ Nel progetto sono state utilizzate le seguenti operazioni CRUD tramite Mongoose:
 
 Questo progetto ha rappresentato una sfida concreta e stimolante. Mi ha permesso di mettere in pratica concetti fondamentali dell'informatica moderna, dalla programmazione asincrona all'integrazione tra front-end e back-end. Ho imparato a risolvere problemi legati all'aggiornamento dinamico dei dati e alla gestione persistente degli stessi, maturando consapevolezza sulle reali esigenze di un'applicazione web.
 
-La realizzazione di un carrello elettronico, seppur semplice, è stata utile per capire come si costruisce un'app concreta, e sono soddisfatto del risultato finale. Ritengo che questo lavoro rappresenti a pieno le competenze acquisite nel mio percorso scolastico ed è per questo che lo propongo come Capolavoro per l'Esame di Stato.
+La realizzazione di un carrello web, seppur semplice, è stata utile per capire come si costruisce un'app concreta, e sono soddisfatto del risultato finale. Ritengo che questo lavoro rappresenti a pieno le competenze acquisite nel mio percorso scolastico ed è per questo che lo propongo come Capolavoro.
 
-## Allegati consigliati
 
-* Screenshot delle schermate dell'applicazione (prodotti, carrello, navbar).
-* Screenshot di porzioni di codice significative (ad esempio la funzione `aggiungiAlCarrello`, la definizione del modello Mongoose, ecc.).
-* Esportazione del database o esempio di documenti presenti nelle collezioni.
-
-*Studente: Simone*
+*Studente: Simone Salvatore Giustiziero*
