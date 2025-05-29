@@ -1,4 +1,4 @@
-# Relazione dettagliata sul progetto "Shopping Cart" - Capolavoro Esame di Stato
+# Relazione sul progetto "Shopping Cart" - Capolavoro
 
 ## Introduzione
 
