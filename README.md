@@ -1,59 +1,94 @@
-# PrimaApp
+# Relazione dettagliata sul progetto "Shopping Cart" - Capolavoro Esame di Stato
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+## Introduzione
 
-## Development server
+Il presente documento descrive in modo approfondito il progetto denominato "Shopping Cart", sviluppato nell'ambito del percorso scolastico per l'Esame di Stato. Il progetto ha lo scopo di realizzare un'applicazione web completa per la gestione di un carrello elettronico, simulando le funzionalità di un piccolo e-commerce. Il lavoro integra competenze acquisite nei linguaggi di programmazione, nello sviluppo front-end e back-end, nell'interazione con database NoSQL (MongoDB) e nell'utilizzo di framework moderni come Angular e Node.js.
 
-To start a local development server, run:
+## Obiettivi del progetto
 
-```bash
-ng serve
+* Realizzare una piattaforma web che consenta agli utenti di visualizzare un elenco di prodotti e aggiungerli o rimuoverli da un carrello.
+* Garantire il salvataggio persistente dei dati tramite un database MongoDB.
+* Consentire la comunicazione tra front-end e back-end tramite chiamate HTTP RESTful.
+* Mostrare in tempo reale la quantità di articoli nel carrello e riflettere dinamicamente eventuali modifiche.
+
+## Tecnologie utilizzate
+
+* **Angular (versione 17)**: utilizzato per la parte front-end. Grazie ai suoi componenti modulari e al data-binding, ha permesso la creazione di un'interfaccia utente dinamica e reattiva.
+* **Node.js e Express.js**: utilizzati per creare il server back-end. Express ha facilitato la gestione delle rotte HTTP e delle richieste asincrone.
+* **MongoDB**: database NoSQL utilizzato per salvare i dati dei prodotti e del carrello.
+* **Mongoose**: libreria ODM per facilitare l'interazione con MongoDB e definire modelli di dati.
+* **TypeScript**: linguaggio fortemente tipizzato utilizzato sia nel front-end Angular che nel back-end Node.js, per una maggiore robustezza del codice.
+* **Postman**: utilizzato durante lo sviluppo per testare le API.
+* **Visual Studio Code**: editor utilizzato per scrivere il codice sia lato front-end che back-end.
+
+## Struttura del progetto
+
+### 1. Front-end (cartella `src`)
+
+* Componenti principali: `prodotti`, `carrello`, `navbar`.
+* Servizi: `cart.service.ts` e `prodotti.service.ts` per gestire le chiamate HTTP al backend.
+* Routing configurato in `app.routes.ts` per navigare tra i componenti.
+* Interfaccia utente semplice e intuitiva, con un contatore accanto all'icona del carrello che si aggiorna dinamicamente.
+
+### 2. Back-end (cartella `src-backend`)
+
+* File principale: `server.js`, che gestisce la connessione a MongoDB e le rotte API.
+* Modelli Mongoose per `Product` e `CartItem`.
+* Rotte REST per:
+
+  * ottenere i prodotti (`GET /api/prodotti`)
+  * aggiungere un prodotto al carrello (`POST /api/carrello`)
+  * rimuovere un prodotto dal carrello (`DELETE /api/carrello/:id`)
+  * ottenere tutti i prodotti del carrello (`GET /api/carrello`)
+
+## Funzionalità implementate
+
+* Visualizzazione dinamica dei prodotti.
+* Aggiunta di un prodotto al carrello tramite il pulsante "Aggiungi al carrello".
+* Rimozione di un prodotto direttamente dalla pagina "Carrello".
+* Aggiornamento istantaneo del numero di articoli nel carrello.
+* Persistenza dei dati tra refresh e riavvio dell'applicazione, grazie al salvataggio in MongoDB.
+
+## Struttura della base dati MongoDB
+
+Il database utilizzato si chiama `shopping_cart` e contiene due collezioni principali:
+
+### 1. prodotti
+
+Contiene tutti i prodotti disponibili all'acquisto. Ogni documento ha la seguente struttura:
+
+```json
+{
+  "_id": ObjectId,
+  "id": Number,
+  "nome": String,
+  "prezzo": Number
+}
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 2. carrello
 
-## Code scaffolding
+Contiene i prodotti attualmente aggiunti al carrello. Ogni documento è simile a quelli della collezione prodotti ma salvato separatamente, per consentire operazioni indipendenti.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Query utilizzate per l'interazione con MongoDB
 
-```bash
-ng generate component component-name
-```
+Nel progetto sono state utilizzate le seguenti operazioni CRUD tramite Mongoose:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+* `Product.find()` - per ottenere tutti i prodotti disponibili.
+* `new CartItem(req.body).save()` - per aggiungere un prodotto al carrello.
+* `CartItem.findByIdAndDelete(req.params.id)` - per rimuovere un prodotto dal carrello.
+* `CartItem.find()` - per recuperare il contenuto attuale del carrello.
 
-```bash
-ng generate --help
-```
+## Conclusione e riflessioni personali
 
-## Building
+Questo progetto ha rappresentato una sfida concreta e stimolante. Mi ha permesso di mettere in pratica concetti fondamentali dell'informatica moderna, dalla programmazione asincrona all'integrazione tra front-end e back-end. Ho imparato a risolvere problemi legati all'aggiornamento dinamico dei dati e alla gestione persistente degli stessi, maturando consapevolezza sulle reali esigenze di un'applicazione web.
 
-To build the project run:
+La realizzazione di un carrello elettronico, seppur semplice, è stata utile per capire come si costruisce un'app concreta, e sono soddisfatto del risultato finale. Ritengo che questo lavoro rappresenti a pieno le competenze acquisite nel mio percorso scolastico ed è per questo che lo propongo come Capolavoro per l'Esame di Stato.
 
-```bash
-ng build
-```
+## Allegati consigliati
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+* Screenshot delle schermate dell'applicazione (prodotti, carrello, navbar).
+* Screenshot di porzioni di codice significative (ad esempio la funzione `aggiungiAlCarrello`, la definizione del modello Mongoose, ecc.).
+* Esportazione del database o esempio di documenti presenti nelle collezioni.
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+*Studente: Simone*
