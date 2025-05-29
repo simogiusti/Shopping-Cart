@@ -1,0 +1,16 @@
+<div class="content">
+  <h2>Il tuo carrello: </h2>
+    <div *ngIf="carrello.length > 0; else vuoto">
+      <ul class="prodotti">
+        <li *ngFor="let prodotto of carrello" class="prodotto">
+          {{ prodotto.nome }} - {{ prodotto.prezzo | currency }}
+          <button (click)="rimuoviDalCarrello(prodotto)" class="rimuoviDalCarrello">Rimuovi dal Carrello</button>
+        </li>
+      </ul>
+    </div>
+    
+    <ng-template #vuoto>
+      <p>Il carrello è vuoto.</p>
+    </ng-template>
+</div>
+

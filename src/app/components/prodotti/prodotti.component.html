@@ -1,0 +1,9 @@
+<div class="content">
+    <h2>Prodotti: </h2>
+    <ul class="prodotti">
+        <li *ngFor="let prodotto of prodotti" class="prodotto">
+            {{ prodotto.nome }} - {{ prodotto.prezzo }}€
+            <button (click)="aggiungiAlCarrello(prodotto)" class="aggiungiAlCarrello">Aggiungi al Carrello</button>
+        </li>
+    </ul>
+</div>

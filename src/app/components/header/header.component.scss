@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    width: 100%;
+    padding: 10px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    cursor: pointer;
+}
+
+.title {
+    height: 30px;
+    margin-top: 18px;
+    margin-left: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.subtitle {
+    height: 30px;
+    margin-top: 18px;
+    margin-left: 12px;
+    font-size: 24;
+    color: white;
+}
