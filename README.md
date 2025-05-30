@@ -86,4 +86,5 @@ Questo progetto ha rappresentato una sfida concreta e stimolante. Mi ha permesso
 La realizzazione di un carrello web, seppur semplice, è stata utile per capire come si costruisce un'app concreta, e sono soddisfatto del risultato finale. Ritengo che questo lavoro rappresenti a pieno le competenze acquisite nel mio percorso scolastico ed è per questo che lo propongo come Capolavoro.
 
 
-*Simone Salvatore Giustiziero*
+*Giustiziero Simone Salvatore*
+*5A Informatica*
